@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd"
+>
+    <menu>
+        <add id="Axeptio_Integration::main_level"
+            resource="Axeptio_Integration::axeptio"
+            title="Axeptio"
+            module="Axeptio_Integration"
+            sortOrder="9999"
+        />
+
+        <add id="Axeptio_Integration::configuration"
+            resource="Axeptio_Integration::axeptio"
+            title="Configuration"
+            action="adminhtml/system_config/edit/section/axeptio"
+            module="Axeptio_Integration"
+            sortOrder="1"
+            parent="Axeptio_Integration::main_level"
+        />
+    </menu>
+</config>

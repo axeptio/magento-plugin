@@ -1,0 +1,177 @@
+{
+  "publishedAt": "2024-01-12T10:35:33.091Z",
+  "projectId": "project-id",
+  "projectName": "Test",
+  "jobId": "65a115f40b6631a5333331e2",
+  "shadowRoot": true,
+  "client": {
+    "colors": {
+      "main": "#ffc823",
+      "paintTransform": {
+        "bg": "ffc823",
+        "hue": 45,
+        "sat": 100,
+        "bri": 57
+      }
+    },
+    "DPO": {}
+  },
+  "privacypolicy": {
+    "title": "Privacy Policy",
+    "name": "privacypolicy"
+  },
+  "dpo": {},
+  "contractsV2": [],
+  "portability": [],
+  "contracts": [],
+  "processings": [],
+  "cookies": [
+    {
+      "identifier": "659679f58fda91eb36d06f2d",
+      "projectId": "659679f547f3eec2b976631d",
+      "steps": [
+        {
+          "topTitle": "Hi there!",
+          "title": "We're the cookies",
+          "message": "<p>We waited to make sure that you were interested in the content of this website before bothering you, but we would love to be your companions during your visit...</p>",
+          "vendors": [],
+          "label": "Welcome screen",
+          "description": "A friendly and nice chat-style screen that allows to start a conversation with the user",
+          "_id": "6461f58d06ddcaa78f3030e3",
+          "name": "welcome",
+          "layout": "welcome",
+          "hasVendors": false,
+          "onlyOnce": true,
+          "image": "cookie-bienvenue",
+          "image_admin": "cookie-pompom",
+          "allowOptOut": true,
+          "fixedPosition": "first",
+          "isFree": true,
+          "showPurposes": true,
+          "showContinueWithoutConsent": false,
+          "sameWeightForAcceptAndRejectButtons": false
+        },
+        {
+          "title": "Analytics & Stats",
+          "subTitle": "Measuring calories is key",
+          "message": "<p>In order to improve your experience, we need to count and measure events on this website, what page you view, how long you stay on the content, etc.</p>",
+          "vendors": [
+            {
+              "_id": "6282644588ca8e0d930c0071",
+              "isAxeptioVendor": true,
+              "domain": "https://www.facebook.com/",
+              "longDescription": "Allows to track the visitor's actions on the website, and see if there’s any conversions",
+              "name": "facebook_pixel",
+              "policyUrl": "https://en-gb.facebook.com/business/gdpr",
+              "shortDescription": "Identifies visitors from Facebook",
+              "title": "Facebook Pixel",
+              "category": "Conversion Tracking",
+              "type": "conversion_tracking"
+            },
+            {
+              "_id": "62826445a14602f7d6038a93",
+              "isAxeptioVendor": true,
+              "domain": "analytics.google.com",
+              "longDescription": "Essential for managing our website, it allows us to measure indicators such as traffic, the most consulted products, or even the geographical distribution of visitors.",
+              "name": "google_analytics",
+              "policyUrl": "https://support.google.com/analytics/answer/6004245?hl=en",
+              "shortDescription": "Helps us measure our audience",
+              "title": "Google Analytics",
+              "category": "Analytics",
+              "type": "analytics"
+            }
+          ],
+          "label": "Analytics & Stats",
+          "name": "analytics",
+          "layout": "category",
+          "hasVendors": true,
+          "image": "Formulaire-DLD-05",
+          "image_admin": "Formulaire-DLD-05",
+          "onlyOnce": false,
+          "allowOptOut": true,
+          "isFree": true
+        }
+      ],
+      "name": "test-en-EU",
+      "icon": "icon_v2_marketing",
+      "isFree": true,
+      "aboutUsId": "base",
+      "isDefault": true,
+      "language": "en",
+      "country": "EU",
+      "strings": {},
+      "a11yStrings": {},
+      "settings": {},
+      "uiSettings": {},
+      "version": {},
+      "title": "English Test Cookies 1"
+    },
+    {
+      "identifier": "65967a23d373ac210446628a",
+      "projectId": "659679f547f3eec2b976631a",
+      "steps": [
+        {
+          "topTitle": "Hi there!",
+          "title": "We're the cookies",
+          "message": "<p>We waited to make sure that you were interested in the content of this website before bothering you, but we would love to be your companions during your visit...</p>",
+          "vendors": [],
+          "label": "Welcome screen",
+          "description": "A friendly and nice chat-style screen that allows to start a conversation with the user",
+          "_id": "6461f58d06ddcaa78f3030ea",
+          "name": "welcome",
+          "layout": "welcome",
+          "hasVendors": false,
+          "onlyOnce": true,
+          "image": "cookie-bienvenue",
+          "image_admin": "cookie-pompom",
+          "allowOptOut": true,
+          "fixedPosition": "first",
+          "isFree": true,
+          "showPurposes": true,
+          "showContinueWithoutConsent": false,
+          "sameWeightForAcceptAndRejectButtons": false
+        },
+        {
+          "title": "Analytics & Stats",
+          "subTitle": "Measuring calories is key",
+          "message": "<p>In order to improve your experience, we need to count and measure events on this website, what page you view, how long you stay on the content, etc.</p>",
+          "vendors": [
+            {
+              "_id": "62826445a14602f7d6038a93",
+              "isAxeptioVendor": true,
+              "domain": "analytics.google.com",
+              "longDescription": "Essential for managing our website, it allows us to measure indicators such as traffic, the most consulted products, or even the geographical distribution of visitors.",
+              "name": "google_analytics",
+              "policyUrl": "https://support.google.com/analytics/answer/6004245?hl=en",
+              "shortDescription": "Helps us measure our audience",
+              "title": "Google Analytics",
+              "category": "Analytics",
+              "type": "analytics"
+            }
+          ],
+          "label": "Analytics & Stats",
+          "name": "analytics",
+          "layout": "category",
+          "hasVendors": true,
+          "image": "Formulaire-DLD-05",
+          "image_admin": "Formulaire-DLD-05",
+          "onlyOnce": false,
+          "allowOptOut": true,
+          "isFree": true
+        }
+      ],
+      "name": "test-en-EU-2",
+      "icon": "icon_v2_stats",
+      "isFree": true,
+      "aboutUsId": "base",
+      "language": "en",
+      "country": "EU",
+      "strings": {},
+      "a11yStrings": {},
+      "settings": {},
+      "uiSettings": {},
+      "version": {},
+      "title": "English Test Cookies"
+    }
+  ]
+}

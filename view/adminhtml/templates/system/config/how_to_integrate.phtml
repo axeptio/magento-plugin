@@ -1,0 +1,19 @@
+<?php
+
+declare(strict_types=1);
+
+use Axeptio\Integration\Block\Adminhtml\System\Config\HowToIntegrate;
+use Magento\Framework\Escaper;
+
+/** @var HowToIntegrate $block */
+/** @var Escaper $escaper */
+?>
+
+<div class="iframe-video-wrapper">
+    <iframe class="iframe-video"
+            src="<?= $escaper->escapeUrl($block->getYoutubeVideoUrl())?>"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen="">
+    </iframe>
+</div>

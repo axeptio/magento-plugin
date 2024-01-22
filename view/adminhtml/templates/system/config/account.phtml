@@ -1,0 +1,47 @@
+<?php
+
+declare(strict_types=1);
+
+use Axeptio\Integration\Block\Adminhtml\System\Config\Account;
+use Magento\Framework\Escaper;
+
+/** @var Account $block */
+/** @var Escaper $escaper */
+?>
+
+<div class="info-main-wrapper">
+    <svg class="w-full md:-mt-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path class="fill-white" d="M808,64.1c-205,11.1-205,11.1-410,6.5C195.4,66,193,66-5,74.9v-85.8h1215V67C1012.9,53,1010.3,53.1,808,64.1z"></path></svg>
+    <div class="info-wrapper">
+        <img class="buddy-cookie" src="<?= $escaper->escapeUrl($block->getViewFileUrl('Axeptio_Integration::images/buddy_cookie.svg')) ?>" alt="Buddy cookie">
+        <div class="info-element">
+            <h3><?= $escaper->escapeHtml(__('Don\'t have a Axeptio account?'))?></h3>
+            <p><?= $escaper->escapeHtml(__('You need an Axeptio account to finish the configuration of this module'))?></p>
+            <div>
+                <a href="<?= $escaper->escapeUrl($block->getSignUpUrl())?>"
+                   target="_blank"
+                   class="primary-button"
+                >
+                    <?= $escaper->escapeHtml(__('I create an account now')) ?>
+                </a>
+                <a href="<?= $escaper->escapeUrl($block->getLearnMoreUrl())?>"
+                   target="_blank"
+                   class="learn-more"
+                >
+                    <?= $escaper->escapeHtml(__('Learn more'))?> <span aria-hidden="true">→</span>
+                </a>
+            </div>
+        </div>
+        <div class="info-element">
+            <h3><?= $escaper->escapeHtml(__('You have already a Axeptio account?'))?></h3>
+            <p><?= $escaper->escapeHtml(__('Go to your personal dashboard to retrieve the project ID you want to use'))?></p>
+            <div class="mt-6 flex flex-col items-center justify-center gap-y-3">
+                <a href="<?= $escaper->escapeUrl($block->getLoginUrl())?>"
+                   target="_blank"
+                   class="primary-button"
+                >
+                    <?= $escaper->escapeHtml(__('I login to my account')) ?>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

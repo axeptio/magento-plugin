@@ -1,0 +1,27 @@
+<?php
+
+declare(strict_types=1);
+
+use Axeptio\Integration\Block\Adminhtml\System\Config\FetchCookies;
+use Magento\Framework\Escaper;
+
+/** @var FetchCookies $block */
+/** @var Escaper $escaper */
+?>
+
+<div class="fetch-cookies-wrapper">
+    <button class="scalable" type="button"
+            data-mage-init='{
+                "updateCookieConfig" : {
+                    "url": "<?= $escaper->escapeUrl($block->getAjaxUrl()) ?>",
+                    "elementId": "<?= $escaper->escapeHtmlAttr($block->getHtmlId()) ?>",
+                    "successText": "<?= $escaper->escapeHtmlAttr(__('The list of projects has been successfully retrieved!')) ?>",
+                    "fieldMapping": "<?= /* @noEscape */ $block->getFieldMapping() ?>"
+                }
+            }'
+    >
+        <span><?= $escaper->escapeHtml($block->getButtonLabel()) ?></span>
+    </button>
+    <span id="<?= $escaper->escapeHtmlAttr($block->getHtmlId()) ?>_result" class="result"></span>
+</div>
+

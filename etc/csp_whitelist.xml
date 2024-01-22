@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<csp_whitelist xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Csp:etc/csp_whitelist.xsd">
+    <policies>
+        <policy id="script-src">
+            <values>
+                <value id="axeptio" type="host">*.axept.io</value>
+            </values>
+        </policy>
+        <policy id="img-src">
+            <values>
+                <value id="axeptio" type="host">axeptio.imgix.net</value>
+            </values>
+        </policy>
+        <policy id="connect-src">
+            <values>
+                <value id="axeptio_api" type="host">api.axept.io</value>
+                <value id="axeptio_client" type="host">client.axept.io</value>
+            </values>
+        </policy>
+    </policies>
+</csp_whitelist>
+

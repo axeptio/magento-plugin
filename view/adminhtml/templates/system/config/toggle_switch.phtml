@@ -1,0 +1,63 @@
+<?php
+
+declare(strict_types=1);
+
+use Axeptio\Integration\Block\Adminhtml\System\Config\Type\ToggleSwitch;
+use Magento\Framework\Escaper;
+
+/** @var ToggleSwitch $block */
+/** @var Escaper $escaper */
+?>
+
+<?php $inputSwitcherId = $block->getId() . '_switcher' ?>
+<?php $randomString = $block->getRandomString() ?>
+
+<input type="hidden"
+       name="<?= $escaper->escapeHtmlAttr($block->getName()) ?>"
+       id="<?= $escaper->escapeHtmlAttr($block->getId()) ?>"
+       value="<?= $escaper->escapeHtmlAttr($block->getValue()) ?>"/>
+
+<div class="toggle-switch-wrapper">
+    <label class="toggle-switch <?php if ($block->getValue()): ?>toggle-on<?php endif ?>">
+        <input type="checkbox"
+               data-bind="<?= $escaper->escapeHtmlAttr($block->getId()) ?>"
+               id="<?= $escaper->escapeHtmlAttr($inputSwitcherId) ?>"
+               <?php if ($block->getValue()): ?>checked<?php endif ?>
+               <?php if ($block->getIsInherit() && !$block->getIsGlobal()): ?>disabled<?php endif ?>
+        />
+        <span class="slider"></span>
+    </label>
+    <span class="switch-labels">
+        <label class="switch-on-label" for="<?= $escaper->escapeHtmlAttr($inputSwitcherId) ?>">
+            <?= $escaper->escapeHtml(__($block->getSwitchOnLabel())) ?>
+        </label>
+        <label class="switch-off-label" for="<?= $escaper->escapeHtmlAttr($inputSwitcherId) ?>">
+            <?= $escaper->escapeHtml(__($block->getSwitchOffLabel())) ?>
+        </label>
+    </span>
+</div>
+
+<script>
+    function eventListener<?= $escaper->escapeHtml($randomString) ?> () {
+        let parent = this.parentElement;
+        let bindElement = document.getElementById(this.dataset.bind);
+
+        parent.classList.toggle('toggle-on');
+        bindElement.value = parent.classList.contains('toggle-on') ? '1' : '0';
+    }
+
+    let listenedElement<?= $escaper->escapeHtml($randomString) ?>Array = document.querySelectorAll("input#<?=  $escaper->escapeHtml($inputSwitcherId) ?>");
+    if (listenedElement<?= $escaper->escapeHtml($randomString) ?>Array.length !== 'undefined') {
+        listenedElement<?= $escaper->escapeHtml($randomString) ?>Array.forEach(function (element) {
+            if (element) {
+                element.onclick = function (event) {
+                    let targetElement = element;
+                    if (event && event.target) {
+                        targetElement = event.target;
+                    }
+                    return eventListener<?= $escaper->escapeHtml($randomString) ?>.apply(targetElement);
+                };
+            }
+        });
+    }
+</script>

@@ -1,0 +1,21 @@
+<?php
+
+declare(strict_types=1);
+
+/** @var Escaper $escaper */
+/** @var Axeptio $block */
+
+use Magento\Framework\Escaper;
+use Axeptio\Integration\Block\Axeptio;
+
+?>
+
+<script>
+    window.axeptioSettings = <?= /** @noEscape */ $block->getSettings() ?>;
+
+    (function(d,s) {
+        let t = d.getElementsByTagName(s)[0],e = d.createElement(s);
+        e.async = true;e.src = "//static.axept.io/sdk.js";
+        t.parentNode.insertBefore(e, t);
+    })(document, "script");
+</script>

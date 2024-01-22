@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd"
+>
+    <system>
+        <tab id="axeptio" translate="label" sortOrder="999" class="axeptio-configuration">
+            <label>Axeptio Integration</label>
+        </tab>
+
+        <section id="axeptio" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Configuration</label>
+            <tab>axeptio</tab>
+            <resource>Axeptio_Integration::axeptio</resource>
+            <group id="integration" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Your Axeptio Settings</label>
+                <group id="how_to" translate="label comment" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>How To Integrate Axeptio?</label>
+                    <field id="video" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label />
+                        <frontend_model>Axeptio\Integration\Block\Adminhtml\System\Config\HowToIntegrate</frontend_model>
+                    </field>
+                </group>
+                <group id="main_settings" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Widget main settings</label>
+                    <comment>Configure the information related to the integration of your Axeptio project here.</comment>
+                    <field id="enabled" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Do you want to enable the widget?</label>
+                        <frontend_model>Axeptio\Integration\Block\Adminhtml\System\Config\Type\ToggleSwitch</frontend_model>
+                        <button_label>Yes, I enable the widget on my website.|No, I do not enable the widget on my website.</button_label>
+                    </field>
+                    <field id="project_id" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Project ID</label>
+                        <frontend_model>Axeptio\Integration\Block\Adminhtml\System\Config\ProjectID</frontend_model>
+                        <button_label>Validate</button_label>
+                    </field>
+                    <field id="cookie_version" translate="label button_label" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Cookie version</label>
+                        <frontend_model>Axeptio\Integration\Block\Adminhtml\System\Config\CookieVersion</frontend_model>
+                    </field>
+                </group>
+                <!--<group id="customization_settings" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Widget customization</label>
+                    <comment>In this section, you can customize the header texts of the Axeptio widget.</comment>
+                    <field id="title" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Widget title</label>
+                    </field>
+                    <field id="subtitle" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Widget sub-title</label>
+                    </field>
+                    <field id="description" translate="label" type="textarea" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Widget description</label>
+                    </field>
+                </group>
+                <group id="data_sending" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Data sending</label>
+                    <comment>In this section, you can set whether or not you want to let Axeptio collect technical datas</comment>
+                    <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                        <label>Collect of data and errors by Axeptio</label>
+                        <frontend_model>Axeptio\Integration\Block\Adminhtml\System\Config\Type\ToggleSwitch</frontend_model>
+                        <button_label>By checking this box, I do not wish to send data/errors to the Axeptio plugin and do not want to contribute to the improvement of the plugin.</button_label>
+                    </field>
+                </group>-->
+                <group id="account" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Axeptio Account</label>
+                    <field id="info" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label/>
+                        <frontend_model>Axeptio\Integration\Block\Adminhtml\System\Config\Account</frontend_model>
+                    </field>
+                </group>
+            </group>
+        </section>
+    </system>
+</config>

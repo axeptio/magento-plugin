@@ -1,0 +1,29 @@
+{
+  "publishedAt": "2024-01-12T10:35:33.091Z",
+  "projectId": "project-id",
+  "projectName": "Test",
+  "jobId": "65a115f40b6631a5333331e2",
+  "shadowRoot": true,
+  "client": {
+    "colors": {
+      "main": "#ffc823",
+      "paintTransform": {
+        "bg": "ffc823",
+        "hue": 45,
+        "sat": 100,
+        "bri": 57
+      }
+    },
+    "DPO": {}
+  },
+  "privacypolicy": {
+    "title": "Privacy Policy",
+    "name": "privacypolicy"
+  },
+  "dpo": {},
+  "contractsV2": [],
+  "portability": [],
+  "contracts": [],
+  "processings": [],
+  "cookies": []
+}

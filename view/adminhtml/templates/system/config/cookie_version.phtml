@@ -1,0 +1,59 @@
+<?php
+
+declare(strict_types=1);
+
+use Axeptio\Integration\Block\Adminhtml\System\Config\FetchCookies;
+use Magento\Framework\Escaper;
+
+/** @var FetchCookies $block */
+/** @var Escaper $escaper */
+
+$defaultCookieVersion = $block->getDefaultCookieVersion();
+?>
+
+<div class="cookie-version-wrapper">
+    <span>
+        <strong><?= $escaper->escapeHtml($block->getScopeLabel()) ?></strong> :
+    </span>
+    <span class="select-wrapper">
+        <select id="<?= $escaper->escapeHtmlAttr($block->getHtmlId())?>"
+                name="<?= $escaper->escapeHtmlAttr($block->getElementName())?>"
+                data-mage-init='{ "selectCookiesConfig": {
+                "defaultCookieVersion": "<?= $escaper->escapeHtmlAttr($defaultCookieVersion) ?>"
+            } }'
+                data-saved-value="<?= $escaper->escapeHtmlAttr($block->getSavedValue()) ?>"
+                <?php if ($block->getIsInherit() && !$block->getIsGlobal()): ?>disabled="disabled"<?php endif ?>
+        >
+        <option value="<?= $escaper->escapeHtmlAttr($defaultCookieVersion) ?>"
+                <?php if (!$block->getSavedValue() || $block->getSavedValue() === $defaultCookieVersion):?>selected<?php endif ?>
+        >
+            <?= $escaper->escapeHtml(__('Dynamic (Axeptio based)')) ?>
+        </option>
+    </select>
+    </span>
+    <div class="fetch-cookies-wrapper">
+        <button class="scalable refresh-wrapper" type="button"
+                data-mage-init='{
+                "updateCookieConfig" : {
+                    "url": "<?= $escaper->escapeUrl($block->getAjaxUrl()) ?>",
+                    "elementId": "<?= $escaper->escapeHtmlAttr($block->getHtmlId()) ?>",
+                    "fieldMapping": "<?= /* @noEscape */ $block->getFieldMapping() ?>"
+                }
+            }'
+                <?php if ($block->getIsInherit() && !$block->getIsGlobal()): ?>disabled<?php endif ?>
+        >
+            <img class="refresh-icon"
+                 src="<?= $escaper->escapeUrl($block->getViewFileUrl('Axeptio_Integration::images/refresh.png')) ?>"
+                 alt="refresh"/>
+        </button>
+    </div>
+</div>
+
+<div class="save-config">
+    <button id="save" type="button" class="action-default scalable save primary ui-button ui-corner-all ui-widget"
+            data-ui-id="page-actions-toolbar-save-button"
+            onclick="document.getElementById('save').click()"
+    >
+        <span><?= $escaper->escapeHtml(__('Save configuration')) ?></span>
+    </button>
+</div>

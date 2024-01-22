@@ -1,0 +1,56 @@
+<?php
+
+declare(strict_types=1);
+
+use Axeptio\Integration\Block\Adminhtml\System\Config\ProjectID;
+use Magento\Framework\Escaper;
+
+/** @var ProjectID $block */
+/** @var Escaper $escaper */
+
+?>
+
+<div class="project-id-wrapper">
+    <input type="text"
+           id="<?= $escaper->escapeHtmlAttr($block->getHtmlId()) ?>"
+           name="<?= $escaper->escapeHtmlAttr($block->getElementName()) ?>"
+           class="input-text admin__control-text"
+           placeholder="<?= $escaper->escapeHtmlAttr(__('Enter your project ID')) ?>"
+           value="<?= $escaper->escapeHtmlAttr($block->getSavedValue()) ?>"
+           <?php if ($block->getIsInherit() && !$block->getIsGlobal()): ?>disabled<?php endif ?>
+    />
+    <div class="fetch-cookies-wrapper">
+        <button class="scalable" type="button"
+                data-mage-init='{
+                "updateCookieConfig" : {
+                    "url": "<?= $escaper->escapeUrl($block->getAjaxUrl()) ?>",
+                    "elementId": "<?= $escaper->escapeHtmlAttr($block->getHtmlId()) ?>",
+                    "fieldMapping": "<?= /* @noEscape */ $block->getFieldMapping() ?>"
+                }
+            }'
+                <?php if ($block->getIsInherit() && !$block->getIsGlobal()): ?>disabled<?php endif ?>
+        >
+            <span><?= $escaper->escapeHtml($block->getButtonLabel()) ?></span>
+        </button>
+    </div>
+</div>
+
+<div class="call-result call-error" id="no_cookie_version">
+    <div>
+        <strong><?= $escaper->escapeHtml(__('We were unable to find your project or it appears that it has not yet been published.')) ?></strong>
+    </div>
+    <div><?= $escaper->escapeHtml(__('If you are sure that your project exists, follow these steps:')) ?></div>
+    <ul>
+        <li><?= $escaper->escapeHtml(__('Go to the Axeptio interface.'))?></li>
+        <li><?= $escaper->escapeHtml(__('Publish your project.'))?></li>
+        <li><?= $escaper->escapeHtml(__('Come back here and refresh the configuration.'))?></li>
+        <li><?= $escaper->escapeHtml(__('If the problem persists, please feel free to consult'))?> <a target="_blank" href="https://support.axeptio.eu/hc/fr"><?= $escaper->escapeHtml(__('our help guide'))?>.</a></li>
+    </ul>
+</div>
+<div class="call-result call-error" id="no_project_id">
+    <?= $escaper->escapeHtml(__('Please enter an account ID')) ?>
+</div>
+<div class="call-result call-error" id="general_error"></div>
+<div class="call-result call-success" id="cookies_fetched">
+    <?= $escaper->escapeHtml(__('The list of projects has been successfully retrieved!')) ?>
+</div>
