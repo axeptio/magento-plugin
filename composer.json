@@ -1,13 +1,12 @@
 {
   "name": "axeptio/module-integration",
-  "version": "1.0.2",
-  "description": "N/A",
+  "description": "Axeptio Integration Magento 2 module",
   "type": "magento2-module",
   "require": {
       "php": "^7.4||^8.0"
   },
   "license": [
-    "Proprietary"
+    "proprietary"
   ],
   "autoload": {
     "files": [
