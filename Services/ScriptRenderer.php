@@ -4,19 +4,21 @@ declare(strict_types=1);
 
 namespace Axeptio\Integration\Services;
 
+use Axeptio\Integration\Services\Configuration\WidgetMainConfiguration;
+
 class ScriptRenderer
 {
-    protected WidgetMainSettings $widgetMainSettingsService;
+    protected WidgetMainConfiguration $widgetMainConfigurationService;
 
     public function __construct(
-        WidgetMainSettings $widgetMainSettingsService
+        WidgetMainConfiguration $widgetMainConfigurationService
     ) {
-        $this->widgetMainSettingsService = $widgetMainSettingsService;
+        $this->widgetMainConfigurationService = $widgetMainConfigurationService;
     }
 
     public function canRender(): bool
     {
-        return $this->widgetMainSettingsService->isEnabled()
-            && !empty($this->widgetMainSettingsService->getProjectID());
+        return $this->widgetMainConfigurationService->isEnabled()
+            && !empty($this->widgetMainConfigurationService->getProjectID());
     }
 }

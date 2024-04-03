@@ -1,0 +1,21 @@
+<?php
+
+declare(strict_types=1);
+
+use Magento\Framework\Escaper;
+
+/**
+ * @var Escaper $escaper
+ */
+?>
+
+<tr>
+    <td class="label"></td>
+    <td class="value">
+        <div class="save-config">
+            <strong><?= $escaper->escapeHtml(__('Default settings for consent mode')) ?></strong>
+            <br />
+            <span><?= $escaper->escapeHtml(__('These consent signals will be sent at page load to tell Google services how they should handle data before consent is granted or denied.')) ?></span>
+        </div>
+    </td>
+</tr>

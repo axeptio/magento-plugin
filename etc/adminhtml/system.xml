@@ -37,6 +37,50 @@
                         <label>Cookie version</label>
                         <frontend_model>Axeptio\Integration\Block\Adminhtml\System\Config\CookieVersion</frontend_model>
                     </field>
+                    <field id="save_configuration" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label/>
+                        <frontend_model>Axeptio\Integration\Block\Adminhtml\System\Config\SaveConfiguration</frontend_model>
+                    </field>
+                </group>
+                <group id="google_consent_mode_v2" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Google Consent Mode V2</label>
+                    <field id="enabled" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Enable Google Consent Mode V2?</label>
+                        <frontend_model>Axeptio\Integration\Block\Adminhtml\System\Config\Type\ToggleSwitch</frontend_model>
+                        <button_label>Yes|No</button_label>
+                    </field>
+                    <field id="info" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label/>
+                        <frontend_model>Axeptio\Integration\Block\Adminhtml\System\Config\GoogleConsentModeInformation</frontend_model>
+                    </field>
+                    <field id="analytics_storage_enabled" translate="label comment" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Analytics storage</label>
+                        <frontend_model>Axeptio\Integration\Block\Adminhtml\System\Config\Type\ToggleSwitch</frontend_model>
+                        <button_label>Yes|No</button_label>
+                        <comment>Allow Google Analytics to measure how visitors use the site to enhance functionality and service.</comment>
+                    </field>
+                    <field id="ad_storage_enabled" translate="label comment" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Ad Storage</label>
+                        <frontend_model>Axeptio\Integration\Block\Adminhtml\System\Config\Type\ToggleSwitch</frontend_model>
+                        <button_label>Yes|No</button_label>
+                        <comment>Permit Google to save advertising information on visitors devices for better ad relevance.</comment>
+                    </field>
+                    <field id="ad_user_data_enabled" translate="label comment" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Ad User Data</label>
+                        <frontend_model>Axeptio\Integration\Block\Adminhtml\System\Config\Type\ToggleSwitch</frontend_model>
+                        <button_label>Yes|No</button_label>
+                        <comment>Share visitors activity data with Google for targeted advertising.</comment>
+                    </field>
+                    <field id="ad_personalization_enabled" translate="label comment" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Ad Personalization</label>
+                        <frontend_model>Axeptio\Integration\Block\Adminhtml\System\Config\Type\ToggleSwitch</frontend_model>
+                        <button_label>Yes|No</button_label>
+                        <comment>Customize the ad experience by allowing Google to personalize the ads that visitors see.</comment>
+                    </field>
+                    <field id="save_configuration" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label/>
+                        <frontend_model>Axeptio\Integration\Block\Adminhtml\System\Config\SaveConfiguration</frontend_model>
+                    </field>
                 </group>
                 <!--<group id="customization_settings" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Widget customization</label>

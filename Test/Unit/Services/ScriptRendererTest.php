@@ -4,41 +4,41 @@ declare(strict_types=1);
 
 namespace Axeptio\Integration\Test\Unit\Services;
 
+use Axeptio\Integration\Services\Configuration\WidgetMainConfiguration;
 use Axeptio\Integration\Services\ScriptRenderer;
-use Axeptio\Integration\Services\WidgetMainSettings;
 use PHPUnit\Framework\TestCase;
 
 class ScriptRendererTest extends TestCase
 {
     public function testCanRender(): void
     {
-        $widgetSettingsMock = $this->createMock(WidgetMainSettings::class);
-        $widgetSettingsMock->method('isEnabled')->willReturn(true);
-        $widgetSettingsMock->method('getProjectID')->willReturn('TEST-ID');
+        $widgetConfigurationMock = $this->createMock(WidgetMainConfiguration::class);
+        $widgetConfigurationMock->method('isEnabled')->willReturn(true);
+        $widgetConfigurationMock->method('getProjectID')->willReturn('TEST-ID');
 
-        $scriptRenderer = new ScriptRenderer($widgetSettingsMock);
+        $scriptRenderer = new ScriptRenderer($widgetConfigurationMock);
 
         $this->assertTrue($scriptRenderer->canRender());
     }
 
     public function testCanRenderWithoutBeingEnabled(): void
     {
-        $widgetSettingsMock = $this->createMock(WidgetMainSettings::class);
-        $widgetSettingsMock->method('isEnabled')->willReturn(false);
-        $widgetSettingsMock->method('getProjectID')->willReturn('TEST-ID');
+        $widgetConfigurationMock = $this->createMock(WidgetMainConfiguration::class);
+        $widgetConfigurationMock->method('isEnabled')->willReturn(false);
+        $widgetConfigurationMock->method('getProjectID')->willReturn('TEST-ID');
 
-        $scriptRenderer = new ScriptRenderer($widgetSettingsMock);
+        $scriptRenderer = new ScriptRenderer($widgetConfigurationMock);
 
         $this->assertFalse($scriptRenderer->canRender());
     }
 
     public function testCanRenderWithoutGettingProjectID(): void
     {
-        $widgetSettingsMock = $this->createMock(WidgetMainSettings::class);
-        $widgetSettingsMock->method('isEnabled')->willReturn(true);
-        $widgetSettingsMock->method('getProjectID')->willReturn('');
+        $widgetConfigurationMock = $this->createMock(WidgetMainConfiguration::class);
+        $widgetConfigurationMock->method('isEnabled')->willReturn(true);
+        $widgetConfigurationMock->method('getProjectID')->willReturn('');
 
-        $scriptRenderer = new ScriptRenderer($widgetSettingsMock);
+        $scriptRenderer = new ScriptRenderer($widgetConfigurationMock);
 
         $this->assertFalse($scriptRenderer->canRender());
     }
