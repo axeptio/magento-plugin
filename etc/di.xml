@@ -7,4 +7,16 @@
             <argument name="baseUrlApi" xsi:type="string">https://client.axept.io</argument>
         </arguments>
     </type>
+
+    <type name="Axeptio\Integration\Block\Axeptio">
+        <arguments>
+            <argument name="settings" xsi:type="array">
+                <item name="client_id_setting" xsi:type="object">Axeptio\Integration\Services\Settings\ClientIdSetting</item>
+                <item name="platform_setting" xsi:type="object">Axeptio\Integration\Services\Settings\PlatformSetting</item>
+                <item name="send_datas_setting" xsi:type="object">Axeptio\Integration\Services\Settings\SendDatasSetting</item>
+                <item name="cookies_version_setting" xsi:type="object">Axeptio\Integration\Services\Settings\CookiesVersionSetting</item>
+                <item name="google_consent_mode_setting" xsi:type="object">Axeptio\Integration\Services\Settings\GoogleConsentModeV2Setting</item>
+            </argument>
+        </arguments>
+    </type>
 </config>

@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Axeptio\Integration\Block\Adminhtml\System\Config;
 
 use Axeptio\Integration\Controller\Adminhtml\Integration\FetchCookies as FetchCookiesController;
-use Axeptio\Integration\Services\WidgetMainSettings;
+use Axeptio\Integration\Services\Configuration\WidgetMainConfiguration;
 use Magento\Config\Block\System\Config\Form\Field;
 use Magento\Framework\Data\Form\Element\AbstractElement;
 
@@ -57,7 +57,7 @@ abstract class AxeptioProjectField extends Field
 
     public function getDefaultCookieVersion(): string
     {
-        return WidgetMainSettings::DEFAULT_COOKIE_VERSION;
+        return WidgetMainConfiguration::DEFAULT_COOKIE_VERSION;
     }
 
     abstract public function getTemplateFilename(): string;
